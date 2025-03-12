@@ -1,0 +1,188 @@
+/* General Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   font-family: 'Roboto', Arial, sans-serif;
+     background-color: #f7f7f7;  /* Soft grey background */
+    color: #333;
+    height: 100vh;
+    overflow: hidden; /* Hide the scroll bar */
+    display: flex;
+    flex-direction: column;
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('/images/dashboard.jpg') no-repeat center center fixed;
+      background-size: cover;
+}
+
+/* Header Section */
+.admin-dashboard-header {
+    background-color: #ff7f32; /* Orange */
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.admin-dashboard-header .logo img {
+    max-width: 50px;
+}
+
+.admin-dashboard-header h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.admin-dashboard-header nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.admin-dashboard-header nav ul li {
+    margin-left: 20px;
+}
+
+.admin-dashboard-header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-dashboard-header nav ul li a:hover {
+    background-color: #e5682d;
+    border-radius: 5px;
+}
+
+/* Main Content Wrapper */
+.content-wrapper {
+    flex: 1; /* Fills available space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px;
+}
+
+.user-management {
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-management h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* User Table Styling */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.user-table th, .user-table td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-table th {
+    background-color: #ff7f32; /* Orange */
+    color: white;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.user-table td a, .user-table td form {
+    display: inline-block;
+}
+
+.edit-button, .delete-button {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button {
+    background-color: #3498db; /* Blue */
+    color: white;
+    margin-right: 10px;
+}
+
+.edit-button:hover {
+    background-color: #2980b9;
+}
+
+.delete-button {
+    background-color: #e74c3c; /* Red */
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+/* Add User Button */
+.add-user-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2ecc71; /* Green */
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.add-user-button:hover {
+    background-color: #27ae60;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .admin-dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .admin-dashboard-header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .user-management {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .user-table th, .user-table td {
+        padding: 8px 12px;
+    }
+
+    .add-user-button {
+        width: 100%;
+        padding: 12px;
+    }
+}

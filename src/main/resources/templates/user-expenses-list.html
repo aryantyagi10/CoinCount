@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>User Expenses</title>
+  <link rel="stylesheet" href="/css/user-dashboard.css" />
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo-section">
+      <img class="logo" src="/images/logo.png" alt="Logo" />
+      <span class="project-name">CoinCount</span>
+    </div>
+    <div class="nav-links">
+      <a href="/auth/logout" class="logout-btn">Logout</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="dashboard-container">
+    <h2>Hello <span th:text="${username}"></span>!</h2>
+
+    <h3>Your Expenses</h3>
+
+    <!-- Total Expense and Back to Dashboard Button -->
+    <div class="expenses-summary">
+      <div class="total-expense-container">
+        <span class="total-expense-label">Total Expense: </span>
+        <span class="total-expense-amount" th:text="${totalExpense} + ' INR'"></span>
+      </div>
+      <div class="back-to-dashboard">
+        <a th:href="@{/user/dashboard-view}" class="back-btn">Back to Dashboard</a>
+      </div>
+    </div>
+
+    <!-- Expenses Table -->
+    <div class="table-container">
+
+
+      <table>
+        <thead>
+        <tr>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Payment Method</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="expense : ${expenses}">
+          <td th:text="${expense.category}">Category</td>
+          <td th:text="${expense.description}">Description</td>
+          <td th:text="${expense.amount}">Amount</td>
+          <td th:text="${expense.date}">Date</td>
+          <td th:text="${expense.paymentMethod}">Payment Method</td>
+          <td>
+            <!-- Edit button as form -->
+            <form th:action="@{/user/expenses/edit/{id}(id=${expense.id})}" method="get" style="display:inline;">
+              <button type="submit" class="edit-btn" onclick="return confirm('Are you sure you want to edit this expense?')">Edit</button>
+            </form>
+            <!-- Delete button as form -->
+            <form th:action="@{/user/expenses/delete/{id}(id=${expense.id})}" method="post" style="display:inline;">
+              <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this expense?')">Delete</button>
+            </form>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>CoinCount © 2025</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Profile</title>
+    <link rel="stylesheet" th:href="@{/css/admin-profile.css}">
+</head>
+<body>
+
+<div class="admin-dashboard-header">
+    <div class="logo">
+        <img th:src="@{/images/logo.png}" alt="CoinCount Logo" width="50" height="50">
+    </div>
+    <h1>Admin Dashboard</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/admin/users}" th:text="'Manage Users'">Manage Users</a></li>
+            <li><a th:href="@{/admin/expenses}" th:text="'Manage Expenses'">Manage Expenses</a></li>
+            <li><a th:href="@{/admin/profile}" th:text="'Admin Profile'">Admin Profile</a></li>
+            <li><a th:href="@{/admin/dashboard-view}" th:text=" 'Home'">Home</a></li>
+            <li><a th:href="@{/auth/logout}" th:text="'Logout'">Logout</a></li>
+        </ul>
+    </nav>
+</div>
+<main>
+    <div class="profile-container">
+        <h2>Profile Details</h2>
+        <p><strong>Username:</strong> <span th:text="${admin.username}"></span></p>
+        <br>
+        <p><strong>Email:</strong> <span th:text="${admin.email}"></span></p>
+
+        <div class="button-group">
+            <a th:href="@{/admin/profile/change-password}" class="btn">Change Password</a>
+        </div>
+    </div>
+</main>
+<!-- Footer Section (Optional) -->
+<footer>
+    <p>CoinCount - Admin Panel</p>
+</footer>
+
+</body>
+</html>

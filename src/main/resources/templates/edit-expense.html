@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Edit Expense</title>
+  <link rel="stylesheet" th:href="@{/css/expense.css}" />
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo-section">
+      <img class="logo" src="/images/logo.png" alt="Logo" />
+      <span class="project-name">CoinCount</span>
+    </div>
+    <div class="nav-links">
+      <a href="/auth/logout" class="logout-btn">Logout</a>
+    </div>
+  </div>
+</header>
+
+<div class="form-container">
+  <h2 class="form-title">Edit Expense</h2>
+  <form th:action="@{/user/expenses/update}" th:object="${expense}" method="post">
+    <input type="hidden" th:field="*{id}" />
+
+    <!-- Category Field -->
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <select id="category" th:field="*{category}" required>
+        <option value="">-- Select Category --</option>
+        <option value="Food" th:selected="*{category == 'Food'}">Food</option>
+        <option value="Travel" th:selected="*{category == 'Travel'}">Travel</option>
+        <option value="Shopping" th:selected="*{category == 'Shopping'}">Shopping</option>
+        <option value="Bills" th:selected="*{category == 'Bills'}">Bills</option>
+        <option value="Other" th:selected="*{category == 'Other'}">Other</option>
+      </select>
+    </div>
+
+    <!-- Description Field -->
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input type="text" id="description" th:field="*{description}" placeholder="Enter description" required />
+    </div>
+
+    <!-- Amount Field -->
+    <div class="form-group">
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" th:field="*{amount}" placeholder="Enter amount" step="0.01" required />
+    </div>
+
+    <!-- Date Field -->
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" id="date" th:field="*{date}" required />
+    </div>
+
+    <!-- Payment Method Field -->
+    <div class="form-group">
+      <label for="paymentMethod">Payment Method:</label>
+      <select id="paymentMethod" th:field="*{paymentMethod}" required>
+        <option value="">-- Select Payment Method --</option>
+        <option value="Cash" th:selected="*{paymentMethod == 'Cash'}">Cash</option>
+        <option value="Credit Card" th:selected="*{paymentMethod == 'Credit Card'}">Credit Card</option>
+        <option value="Debit Card" th:selected="*{paymentMethod == 'Debit Card'}">Debit Card</option>
+        <option value="UPI" th:selected="*{paymentMethod == 'UPI'}">UPI</option>
+        <option value="Net Banking" th:selected="*{paymentMethod == 'Net Banking'}">Net Banking</option>
+      </select>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+      <button type="submit" class="button">Update</button>
+      <a th:href="@{/user/expenses/dashboard-view}" class="button cancel-btn">Cancel</a>
+    </div>
+  </form>
+</div>
+
+<footer class="footer">
+  <p>CoinCount © 2025</p>
+</footer>
+
+</body>
+</html>

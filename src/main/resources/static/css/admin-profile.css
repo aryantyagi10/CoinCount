@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+         background-color: #f7f7f7;  /* Soft grey background */
+           color: #333;
+           height: 100vh;
+           overflow: hidden; /* Hide the scroll bar */
+           display: flex;
+           flex-direction: column;
+           background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+           url('/images/dashboard.jpg') no-repeat center center fixed;
+           background-size: cover;
+}
+
+/* Header Section */
+.admin-dashboard-header {
+    background-color: #ff7f32; /* Orange */
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-dashboard-header .logo img {
+    max-width: 50px;
+}
+
+.admin-dashboard-header h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.admin-dashboard-header nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.admin-dashboard-header nav ul li {
+    margin-left: 20px;
+}
+
+.admin-dashboard-header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-dashboard-header nav ul li a:hover {
+    background-color: #e5682d;
+    border-radius: 5px;
+}
+
+.main {
+    padding: 20px;
+}
+
+
+.profile-container, .form-container {
+    width: 50%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #FF7043;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button.btn {
+    padding: 10px 20px;
+    color: white;
+    background-color: #FF7043;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #FF8A65;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 15px;
+}
+
+.button-group a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #FF7043;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.button-group a:hover {
+    background-color: #FF8A65;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .admin-dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .admin-dashboard-header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-container {
+        padding: 10px;
+        margin: 10px;
+    }
+
+
+}

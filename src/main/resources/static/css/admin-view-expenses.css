@@ -1,0 +1,153 @@
+/* General Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   font-family: 'Roboto', Arial, sans-serif;
+     background-color: #f7f7f7;  /* Soft grey background */
+    color: #333;
+    height: 100vh;
+    overflow: hidden; /* Hide the scroll bar */
+    display: flex;
+    flex-direction: column;
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('/images/dashboard.jpg') no-repeat center center fixed;
+      background-size: cover;
+}
+
+
+
+/* Header Section */
+.admin-dashboard-header {
+    background-color: #ff7f32; /* Orange */
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-dashboard-header .logo img {
+    max-width: 50px;
+}
+
+.admin-dashboard-header h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.admin-dashboard-header nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.admin-dashboard-header nav ul li {
+    margin-left: 20px;
+}
+
+.admin-dashboard-header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-dashboard-header nav ul li a:hover {
+    background-color: #e5682d;
+    border-radius: 5px;
+}
+
+/* Main Content Wrapper */
+.content-wrapper {
+    flex: 1; /* Fills available space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px;
+}
+
+.content {
+    margin: 20px auto;
+    width: 90%;
+}
+
+.search-form{
+  background-color: #aba398;
+    color: white;
+    font-size: 18px;
+      padding: 10px 20px;
+}
+
+.search form, .search-button{
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.search-button{
+ padding: 4px 8px;
+    font-size: 14px;
+}
+
+.delete-button {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover{
+  background-color: #27ae60;
+  }
+
+.delete-button {
+    background-color: #e74c3c; /* Red */
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #ff6f00;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }

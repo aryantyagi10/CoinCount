@@ -1,0 +1,188 @@
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f7f7f7;  /* Soft grey background */
+  color: #333;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url('/images/dashboard.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+/* General container styling for forms */
+.form-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #fff5e6, #ffe0cc);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
+
+}
+
+/* Header */
+header {
+  background-color: #FF7F50;  /* Coral Orange */
+  color: white;
+  padding: 15px 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.project-name {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.nav-links .logout-btn {
+  background-color: #4A4A4A;  /* Dark grey logout button */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links .logout-btn:hover {
+  background-color: #333333;  /* Darker grey on hover */
+}
+
+
+/* Page title */
+.form-title {
+    text-align: center;
+    font-size: 28px;
+    color: #ff8c42;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    color: #555;
+}
+
+.form-group input,
+.form-group select {
+    width: -webkit-fill-available;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #ff8c42;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 140, 66, 0.5);
+}
+
+/* Dropdown styling */
+select {
+    appearance: none;
+    background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><path fill="%23ff8c42" d="M0 2l5 6 5-6z"/></svg>') no-repeat right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+/* Form actions */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.button {
+    padding: 12px 20px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    background-color: #ff8c42;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: #e67338;
+    transform: translateY(-2px);
+}
+
+.cancel-btn {
+    background-color: #ff704d;
+}
+
+.cancel-btn:hover {
+    background-color: #e66042;
+}
+
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+  font-size: 14px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .navbar {
+     flex-direction: column;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button {
+        width: 100%;
+    }
+}

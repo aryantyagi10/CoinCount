@@ -1,0 +1,139 @@
+/* General Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f7f7f7;
+    display: flex;
+
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('/images/auth.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff8c42;
+    padding: 15px;
+    color: white;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.project-name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links .btn {
+    text-decoration: none;
+    color: white;
+    background-color: #333;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+/* Main Content Wrapper */
+.content-wrapper {
+    flex: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px;
+}
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 50px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.form-container h1 {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    margin: 10px 0 5px;
+}
+
+.form input,
+.form select {
+    width: 98%;
+    padding: 6px 2px 6px 2px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+.submit-btn {
+    background-color: #ff8c42;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+.submit-btn:hover {
+    background-color: #e67332;
+}
+
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.error-message {
+    color: #595655;
+    font-size: 0.8rem;
+    margin: 15px;
+}
+
+.login-button,
+.signup-button {
+    color: #c56727;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 8px;
+}
+
+.login-button:hover,
+.signup-button:hover {
+    color: #77c167;
+}
+
+.footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    margin-top: auto;
+    position: relative; /* Ensure footer stays visible */
+}
+

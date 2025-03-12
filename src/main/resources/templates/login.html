@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CoinCount - Login</title>
+    <link rel="stylesheet" th:href="@{/css/forms.css}">
+</head>
+
+<body>
+<header class="navbar">
+    <div class="logo-section">
+        <img th:src="@{/images/logo.png}" alt="CoinCount Logo" class="logo">
+        <span class="project-name">CoinCount</span>
+    </div>
+    <div class="nav-links">
+        <a href="/" class="btn">Home</a>
+    </div>
+</header>
+
+<div class="content-wrapper">
+    <main class="form-container">
+        <h1>Login</h1>
+        <form th:action="@{/auth/login-view}" method="post" class="form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+
+        <!--  Display error message if login fails -->
+        <div th:if="${param.error}" class="error-message">
+            <p>Invalid username or password! Please try again.</p>
+            <p>If you don't have an account,
+                <a th:href="@{/auth/signup-view}" class="signup-button">Signup</a>
+            </p>
+        </div>
+    </main>
+</div>
+<footer class="footer">
+    <p>&copy; 2024 CoinCount. All Rights Reserved.</p>
+</footer>
+</body>
+
+</html>

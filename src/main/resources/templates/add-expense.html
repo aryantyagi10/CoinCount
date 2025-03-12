@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Add Expense</title>
+  <link rel="stylesheet" th:href="@{/css/expense.css}" />
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo-section">
+      <img class="logo" src="/images/logo.png" alt="Logo" />
+      <span class="project-name">CoinCount</span>
+    </div>
+    <div class="nav-links">
+      <a href="/auth/logout" class="logout-btn">Logout</a>
+    </div>
+  </div>
+</header>
+
+<div class="form-container">
+  <h2 class="form-title">Add New Expense</h2>
+  <form th:action="@{/user/expenses/add-expense}" th:object="${expense}" method="post">
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <select id="category" th:field="*{category}" required>
+        <option value="">-- Select Category --</option>
+        <option value="Food">Food</option>
+        <option value="Travel">Travel</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Bills">Bills</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input type="text" id="description" th:field="*{description}" placeholder="Enter description" required />
+    </div>
+
+    <div class="form-group">
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" th:field="*{amount}" placeholder="Enter amount" step="0.01" required />
+    </div>
+
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" id="date" th:field="*{date}" required />
+    </div>
+
+    <div class="form-group">
+      <label for="paymentMethod">Payment Method:</label>
+      <select id="paymentMethod" th:field="*{paymentMethod}" required>
+        <option value="">-- Select Payment Method --</option>
+        <option value="Cash">Cash</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Debit Card">Debit Card</option>
+        <option value="UPI">UPI</option>
+        <option value="Net Banking">Net Banking</option>
+      </select>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="button">Add Expense</button>
+      <a th:href="@{/user/dashboard-view}" class="button cancel-btn">Cancel</a>
+    </div>
+  </form>
+</div>
+
+<footer class="footer">
+  <p>CoinCount © 2025</p>
+</footer>
+
+</body>
+</html>

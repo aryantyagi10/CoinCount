@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CoinCount - Home</title>
+  <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+
+<body>
+<header class="navbar">
+  <div class="logo-section">
+    <img th:src="@{/images/logo.png}" alt="CoinCount Logo" class="logo">
+    <span class="project-name">CoinCount</span>
+  </div>
+  <div class="nav-links">
+    <a th:href="@{/auth/login-view}" class="btn">Login</a>
+    <a th:href="@{/auth/signup-view}" class="btn">Signup</a>
+  </div>
+</header>
+
+<main class="main-content">
+  <h1>Welcome to CoinCount</h1>
+  <p>Track and manage your expenses efficiently and securely.</p>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2024 CoinCount. All Rights Reserved.</p>
+</footer>
+</body>
+
+</html>

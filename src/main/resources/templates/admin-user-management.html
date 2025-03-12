@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - User Management</title>
+  <link rel="stylesheet" href="/css/admin-user-management.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+<!-- Admin Dashboard Header with Logo -->
+<div class="admin-dashboard-header">
+  <div class="logo">
+    <img th:src="@{/images/logo.png}" alt="CoinCount Logo" width="50" height="50">
+  </div>
+  <h1>Admin Dashboard</h1>
+  <nav>
+    <ul>
+      <li><a th:href="@{/admin/users}" th:text="'Manage Users'">Manage Users</a></li>
+      <li><a th:href="@{/admin/expenses}" th:text="'Manage Expenses'">Manage Expenses</a></li>
+      <li><a th:href="@{/admin/profile}" th:text="'Admin Profile'">Admin Profile</a></li>
+      <li><a th:href="@{/admin/dashboard-view}" th:text=" 'Home'">Home</a></li>
+      <li><a th:href="@{/auth/logout}" th:text="'Logout'">Logout</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- Main Content Wrapper -->
+<div class="content-wrapper">
+  <div class="user-management">
+    <h2>User Management</h2>
+
+    <!-- User Table with Action Buttons -->
+    <table class="user-table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Iterate through filtered users -->
+      <tr th:each="user, iterStat : ${users}">
+        <td th:text="${iterStat.index + 1}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.email}"></td>
+        <td>
+          <a th:href="@{/admin/users/edit/{id}(id=${user.id})}" class="edit-button">Edit</a>
+          <form th:action="@{/admin/users/delete/{id}(id=${user.id})}" method="POST" style="display:inline;">
+            <button type="submit" class="delete-button">Delete</button>
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!-- Add New User Button -->
+    <a href="/admin/users/add" class="add-user-button">Add New User</a>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer>
+  <p>CoinCount - Admin Panel</p>
+</footer>
+</body>
+</html>

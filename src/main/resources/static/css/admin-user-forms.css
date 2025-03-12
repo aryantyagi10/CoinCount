@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #f7f7f7;  /* Soft grey background */
+      color: #333;
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('/images/dashboard.jpg') no-repeat center center fixed;
+      background-size: cover;
+}
+
+/* Header Section */
+.admin-dashboard-header {
+    background-color: #ff7f32; /* Orange */
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-dashboard-header .logo img {
+    max-width: 50px;
+}
+
+.admin-dashboard-header h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.admin-dashboard-header nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.admin-dashboard-header nav ul li {
+    margin-left: 20px;
+}
+
+.admin-dashboard-header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-dashboard-header nav ul li a:hover {
+    background-color: #e5682d;
+    border-radius: 5px;
+}
+
+
+/* Container Styling */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+h2 {
+    color: #ff6600; /* Orange */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Form Styles */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #ff6600;
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+}
+
+/* Button Styles */
+button,
+.cancel-button {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.save-button {
+    background-color: #ff6600;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+    background-color: #cc5200; /* Darker Orange */
+}
+
+.cancel-button {
+    background-color: #ccc;
+    color: black;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.cancel-button:hover {
+    background-color: #999;
+}
+
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    flex-shrink: 0; /* Prevent shrinking */
+}

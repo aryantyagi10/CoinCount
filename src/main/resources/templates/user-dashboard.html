@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="/css/user-dashboard.css" />
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo-section">
+      <img class="logo" src="/images/logo.png" alt="Logo" />
+      <span class="project-name">CoinCount</span>
+    </div>
+    <div class="nav-links">
+      <a href="/auth/logout" class="logout-btn">Logout</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="dashboard-container">
+    <h1>Hello<span th:text="${username}"></span>, welcome to Your Dashboard!</h1>
+
+    <!-- Centered Buttons-->
+    <div>
+      <a class="button add-expense-btn" th:href="@{/user/expenses/add-expense-view}">Add Expense</a>
+      <a class="button view-expense-btn" th:href="@{/user/expenses/dashboard-view}">View Expenses</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>CoinCount © 2025</p>
+</footer>
+
+</body>
+</html>

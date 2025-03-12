@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" th:href="@{/css/admin-dashboard.css}">
+</head>
+<body>
+<!-- Header Section -->
+<header class="header">
+  <div class="logo-container">
+    <img th:src="@{/images/logo.png}" alt="Logo" class="logo">
+    <h1 class="header-title">CoinCount</h1>
+  </div>
+  <div class="logout-container">
+    <a th:href="@{/auth/logout}" class="logout-btn">Logout</a>
+  </div>
+</header>
+
+<!-- Main Content Section -->
+<main class="main-content">
+  <div class="welcome-message">
+    <h2>Welcome, <span th:text="${username}"></span>!</h2>
+    <p>Manage your users and expenses efficiently.</p>
+  </div>
+
+  <!-- Dashboard Navigation Section -->
+  <div class="dashboard-buttons">
+    <div class="navigation">
+      <a th:href="@{/admin/users}" class="btn">View Users</a>
+      <a th:href="@{/admin/expenses}" class="btn">View Expenses</a>
+      <a th:href="@{/admin/profile}" class="btn">Admin Profile</a>
+    </div>
+  </div>
+</main>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <p>&copy; 2025 CoinCount. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
